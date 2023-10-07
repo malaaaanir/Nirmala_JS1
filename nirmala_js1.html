@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirmala_JS1</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: auto;
+            background-color: whitesmoke;
+        }
+        form{
+            background-color: rgb(105, 208, 255);
+            padding: 20px 50px;
+        }
+        button{
+            background-color: red;
+            border-radius: 10px;
+            padding: 10px 20px;
+        }
+        input{
+            background-color: rgb(214, 208, 208);
+            border-radius: 10px;
+            padding: 10px 20px;
+            width: 5%;
+        }
+        </style>
+</head>
+<body>
+    <!-- Halaman If Else -->
+    <form>
+        <h1>✨JavaScript If Else</h1>
+        <p>Hasil dari pengimplemtasian If Else (Masukkan angka dari 0-20)</p>
+        <input type="number" id="timeInput" min="0" max="20">
+        <button onclick="FIfElse(event)">Input</button>
+        <p id="ifElse"></p>
+    </form><br>
+    <form action="">
+        <!-- Halaman Switch Case -->
+        <h1>✨JavaScript Switch Case</h1>
+        <p>Hasil dari pengimpelentasian Switch Case (Masukkan angka dari 1-5)</p>
+        <input type="number" id="angkaInput" min="0" max="20">
+        <button onclick="FSwitchCase(event)">Input</button>
+        <p id="switchCase"></p>
+    </form><br>
+    <form action="">
+        <!-- Halaman For Statement -->
+        <h1>✨Javascript For Statement</h1>
+        <p>Hasil dari pengimplementasian For Statement</p>
+        <button onclick="FFor(event)">Tampilkan</button>
+        <p id="output"></p>
+    </form><br>
+    <form action="">
+        <!-- Halaman While -->
+        <h1>✨Javascript While</h1>
+        <p>Hasil dari pengimplementasian While</p>
+        <button onclick="WWhile(event)">Tampilkan</button>
+        <p id="whileOutput"></p>
+    </form><br>
+    <form action="">
+        <!-- Halaman Function -->
+        <h1>✨JavaScript Functions</h1>
+        <p>Hasil dari pengimplementasian Function 4x4</p>
+        <b><p id="function" style="color: red;"></p></b>
+    </form> 
+    <script>
+        // IF ELSE
+        function FIfElse(event) {
+            event.preventDefault();
+            const time = parseInt(document.getElementById("timeInput").value);
+            let greeting;
+            
+            if (time <= 10) {
+                greeting = "Good morning";
+            } else if (time <= 20) {
+                greeting = "Good day";
+            } else {
+            greeting = "Pilihan yang anda masukkan tidak ada dalam daftar!";
+            }
+
+            document.getElementById("ifElse").innerHTML = greeting;
+        }
+        
+        // SWITCH CASE
+        function FSwitchCase(event) {
+            event.preventDefault();
+            const angka = parseInt(document.getElementById("angkaInput").value);
+            let HasilS;
+            switch(angka) {
+                case 1:
+                    HasilS = "Ini angka 1";
+                break;
+                case 2:
+                    HasilS = "Ini angka 2";
+                break;
+                case 3:
+                    HasilS = "Ini angka 3";
+                break;
+                case 4:
+                    HasilS = "Ini angka 4";
+                    break;
+                    case 5:
+                    HasilS = "Ini angka 5";
+                    break;
+                default:
+                    HasilS = "Pilihan yang anda masukkan tidak ada dalam daftar!";
+                    break;
+                }
+
+            document.getElementById("switchCase").innerHTML = HasilS;
+        }
+
+        // FOR
+        function FFor(event) {
+            event.preventDefault();
+            let outputText = "";
+            
+            for (let i = 1; i <= 5; i++) {
+            outputText += "Iterasi ke-" + i + "<br>";
+            }
+
+            document.getElementById("output").innerHTML = outputText;
+        }
+
+        // WHILE
+        function WWhile(event) {
+            event.preventDefault();
+            let i = 1;
+            let outputText = "";
+
+            while (i <= 5) {
+            outputText += "Iterasi ke-" + i + "<br>";
+            i++;
+            }
+
+            document.getElementById("whileOutput").innerHTML = outputText;
+        }
+
+        // FUNCTION
+        let x = myFunction(4, 4);
+            document.getElementById("function").innerHTML = x;
+        function myFunction(a, b) {
+            return a * b;
+        } 
+
+    </script>
+</body>
+</html>
+
